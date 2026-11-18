@@ -1,0 +1,334 @@
+/* OpenDyslexic Font Faces */
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('OpenDyslexic'),
+       local('OpenDyslexic Regular'),
+       local('Open-Dyslexic'),
+       url('/fonts/opendyslexic-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('OpenDyslexic Bold'),
+       local('OpenDyslexic-Bold'),
+       local('Open-Dyslexic-Bold'),
+       url('/fonts/opendyslexic-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('OpenDyslexic Italic'),
+       local('OpenDyslexic-Italic'),
+       local('Open-Dyslexic-Italic'),
+       url('/fonts/opendyslexic-latin-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('OpenDyslexic BoldItalic'),
+       local('OpenDyslexic-BoldItalic'),
+       url('/fonts/opendyslexic-latin-700-italic.woff2') format('woff2');
+}
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Landing page fonts (see :root below + index.html Google Fonts <link>s) */
+  --font-heading: var(--font-lexend);
+  --font-body: var(--font-atkinson);
+}
+
+:root {
+  --primary: #159ac1;
+  --primary-foreground: #f4fdff;
+  --sidebar-primary: #159ac1;
+  --sidebar-primary-foreground: #f4fdff;
+  --chart-1: #b9e9f2;
+  --chart-2: #73cfdf;
+  --chart-3: #159ac1;
+  --chart-4: #0e7795;
+  --chart-5: #214554;
+  --radius: 0.75rem;
+  --background: #f6fbfd;
+  --foreground: #214554;
+  --card: #ffffff;
+  --card-foreground: #214554;
+  --popover: #ffffff;
+  --popover-foreground: #214554;
+  --secondary: #f0f8fa;
+  --secondary-foreground: #5e7d88;
+  --muted: #edf6f8;
+  --muted-foreground: #8aa7b1;
+  --accent: #e8f8fc;
+  --accent-foreground: #159ac1;
+  --destructive: #df7657;
+  --destructive-foreground: #fffaf8;
+  --border: #e2eef1;
+  --input: #e2eef1;
+  --ring: #85d4e3;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #214554;
+  --sidebar-accent: #e8f8fc;
+  --sidebar-accent-foreground: #159ac1;
+  --sidebar-border: #e2eef1;
+  --sidebar-ring: #85d4e3;
+
+  /* Landing page (marketing site) typography, ported from the original
+     Next.js project's globals.css. Loaded via Google Fonts <link> tags in
+     index.html; these are the fallback stacks if that CDN is unreachable. */
+  --font-lexend: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --font-atkinson: "Atkinson Hyperlegible", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-heading { font-family: var(--font-lexend); }
+.font-body { font-family: var(--font-atkinson); }
+
+/* Landing login/signup card shadow (src/app/login/page.tsx used this class
+   name but the original project never defined it — restored here). */
+.shadow-calm { box-shadow: 0 20px 45px -12px rgba(21, 60, 90, 0.16); }
+
+/* Dyslexia-Friendly Reading Mode (OpenDyslexic) */
+html.dyslexia-font {
+  font-size: 89%; /* Calibrates OpenDyslexic's large x-height down to match standard UI typography */
+}
+
+/* Set CSS font variables for Tailwind and components */
+html.dyslexia-font,
+body.dyslexia-font,
+.dyslexia-font,
+.dyslexia-mode {
+  --font-sans: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+  --font-heading: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+  --font-body: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+  --font-lexend: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+  --font-atkinson: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+  font-family: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+  letter-spacing: 0.015em;
+  word-spacing: 0.035em;
+  line-height: 1.62;
+}
+
+/* Apply OpenDyslexic directly to all text elements in dyslexia mode */
+html.dyslexia-font body,
+body.dyslexia-font,
+.dyslexia-font,
+.dyslexia-font p,
+.dyslexia-font span,
+.dyslexia-font h1,
+.dyslexia-font h2,
+.dyslexia-font h3,
+.dyslexia-font h4,
+.dyslexia-font h5,
+.dyslexia-font h6,
+.dyslexia-font a,
+.dyslexia-font button,
+.dyslexia-font input,
+.dyslexia-font select,
+.dyslexia-font textarea,
+.dyslexia-font label,
+.dyslexia-font strong,
+.dyslexia-font b,
+.dyslexia-font em,
+.dyslexia-font i,
+.dyslexia-font small,
+.dyslexia-font li,
+.dyslexia-font div,
+.dyslexia-mode,
+.dyslexia-mode p,
+.dyslexia-mode span,
+.dyslexia-mode h1,
+.dyslexia-mode h2,
+.dyslexia-mode h3,
+.dyslexia-mode h4,
+.dyslexia-mode h5,
+.dyslexia-mode h6,
+.dyslexia-mode a,
+.dyslexia-mode button,
+.dyslexia-mode input,
+.dyslexia-mode select,
+.dyslexia-mode textarea,
+.dyslexia-mode label,
+.dyslexia-mode strong,
+.dyslexia-mode b,
+.dyslexia-mode em,
+.dyslexia-mode i,
+.dyslexia-mode small,
+.dyslexia-mode li,
+.dyslexia-mode div {
+  font-family: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+}
+
+/* Proportional heading sizes and adequate spacing for OpenDyslexic */
+.dyslexia-font h1,
+.dyslexia-mode h1 {
+  font-size: 0.9em;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.dyslexia-font h2,
+.dyslexia-mode h2 {
+  font-size: 0.92em;
+  line-height: 1.38;
+  letter-spacing: 0.01em;
+}
+
+.dyslexia-font h3,
+.dyslexia-mode h3 {
+  font-size: 0.94em;
+  line-height: 1.42;
+  letter-spacing: 0.01em;
+}
+
+.dyslexia-font p,
+.dyslexia-mode p {
+  line-height: 1.68;
+  letter-spacing: 0.015em;
+  word-spacing: 0.035em;
+}
+
+/* Adequate spacing in lists and buttons */
+.dyslexia-font li,
+.dyslexia-mode li {
+  line-height: 1.65;
+  margin-bottom: 0.35rem;
+}
+
+.dyslexia-font button,
+.dyslexia-mode button,
+.dyslexia-font input,
+.dyslexia-mode input,
+.dyslexia-font textarea,
+.dyslexia-mode textarea {
+  letter-spacing: 0.015em;
+  word-spacing: 0.025em;
+}
+
+/* Strictly protect non-text elements: SVG icons, Lucide icons, code blocks */
+.dyslexia-font svg,
+.dyslexia-font svg *,
+.dyslexia-font [class*="lucide"],
+.dyslexia-font .lucide,
+.dyslexia-mode svg,
+.dyslexia-mode svg *,
+.dyslexia-mode [class*="lucide"],
+.dyslexia-mode .lucide {
+  font-family: inherit !important;
+}
+
+.dyslexia-font code,
+.dyslexia-font code *,
+.dyslexia-font pre,
+.dyslexia-font pre *,
+.dyslexia-font kbd,
+.dyslexia-mode code,
+.dyslexia-mode code *,
+.dyslexia-mode pre,
+.dyslexia-mode pre *,
+.dyslexia-mode kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+.font-\[Open-Dyslexic\],
+.font-\[OpenDyslexic\] {
+  font-family: "OpenDyslexic", "Open-Dyslexic", opendyslexic, sans-serif !important;
+}
+
+/* Smooth transitions during font toggle */
+html {
+  transition: font-size 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  transition: font-size 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              letter-spacing 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              word-spacing 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              line-height 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.25s ease,
+              color 0.25s ease;
+}
+
+.font-toggling,
+.font-toggling * {
+  transition: font-size 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              letter-spacing 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              word-spacing 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              line-height 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease !important;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--background); font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; }
+button, input, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), [type="reset"]:not(:disabled), a[href], select:not(:disabled), input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) { @apply cursor-pointer; }
+}
+
+@layer components {
+  .container { width: 100%; margin-inline: auto; padding-inline: 1rem; }
+  .flex { min-height: 0; min-width: 0; }
+  @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+  @media (min-width: 1024px) { .container { max-width: 1280px; padding-inline: 2rem; } }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button, a, input, select { transition: color 160ms ease-out, background-color 160ms ease-out, border-color 160ms ease-out, box-shadow 160ms ease-out, transform 160ms ease-out, opacity 160ms ease-out; }
+}

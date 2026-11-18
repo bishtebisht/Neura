@@ -1,0 +1,629 @@
+{
+  "dataset_stats": {
+    "rows_raw": 19630,
+    "rows_after_dedup": 7666,
+    "duplicates_removed": 11964,
+    "unique_students": 1870,
+    "unique_skills": 113
+  },
+  "split_sizes": {
+    "train_rows": 5561,
+    "val_rows": 783,
+    "test_rows": 1322,
+    "train_students": 1309,
+    "val_students": 187,
+    "test_students": 374
+  },
+  "validation_metrics": {
+    "majority_baseline": {
+      "accuracy": 0.4942528735632184,
+      "macro_f1": 0.1323076923076923,
+      "weighted_f1": 0.3269672855879752,
+      "precision_macro": 0.09885057471264368,
+      "recall_macro": 0.2,
+      "per_class_f1": {
+        "visual": 0.0,
+        "textual": 0.6615384615384615,
+        "step-by-step": 0.0,
+        "example-based": 0.0,
+        "socratic": 0.0
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            0,
+            134,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            387,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            28,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            133,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            101,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "logistic_regression": {
+      "accuracy": 0.9169859514687101,
+      "macro_f1": 0.9077647489019431,
+      "weighted_f1": 0.9173608931894407,
+      "precision_macro": 0.9235237624874845,
+      "recall_macro": 0.894866168115769,
+      "per_class_f1": {
+        "visual": 0.9438202247191011,
+        "textual": 0.9321382842509603,
+        "step-by-step": 0.9230769230769231,
+        "example-based": 0.9224806201550387,
+        "socratic": 0.8173076923076923
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            126,
+            3,
+            0,
+            2,
+            3
+          ],
+          [
+            3,
+            364,
+            0,
+            1,
+            19
+          ],
+          [
+            2,
+            1,
+            24,
+            1,
+            0
+          ],
+          [
+            0,
+            14,
+            0,
+            119,
+            0
+          ],
+          [
+            2,
+            12,
+            0,
+            2,
+            85
+          ]
+        ]
+      }
+    },
+    "decision_tree": {
+      "accuracy": 0.9936143039591315,
+      "macro_f1": 0.9809851225413861,
+      "weighted_f1": 0.9936135186423845,
+      "precision_macro": 0.9812366737739872,
+      "recall_macro": 0.9807490130676181,
+      "per_class_f1": {
+        "visual": 0.9850746268656716,
+        "textual": 1.0,
+        "step-by-step": 0.9285714285714286,
+        "example-based": 0.9962546816479401,
+        "socratic": 0.9950248756218906
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            132,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            387,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            26,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            133,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            100
+          ]
+        ]
+      }
+    },
+    "random_forest": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "per_class_f1": {
+        "visual": 1.0,
+        "textual": 1.0,
+        "step-by-step": 1.0,
+        "example-based": 1.0,
+        "socratic": 1.0
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            134,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            387,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            28,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            133,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            101
+          ]
+        ]
+      }
+    },
+    "gradient_boosting": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "per_class_f1": {
+        "visual": 1.0,
+        "textual": 1.0,
+        "step-by-step": 1.0,
+        "example-based": 1.0,
+        "socratic": 1.0
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            134,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            387,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            28,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            133,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            101
+          ]
+        ]
+      }
+    }
+  },
+  "selected_model": "decision_tree",
+  "test_metrics": {
+    "accuracy": 0.9863842662632375,
+    "macro_f1": 0.9567868624365801,
+    "weighted_f1": 0.9860266630418858,
+    "precision_macro": 0.9687524358214012,
+    "recall_macro": 0.9474923144488361,
+    "per_class_f1": {
+      "visual": 0.9653679653679653,
+      "textual": 1.0,
+      "step-by-step": 0.8395061728395061,
+      "example-based": 0.9975786924939467,
+      "socratic": 0.9814814814814815
+    },
+    "confusion_matrix": {
+      "labels": [
+        "visual",
+        "textual",
+        "step-by-step",
+        "example-based",
+        "socratic"
+      ],
+      "matrix": [
+        [
+          223,
+          0,
+          3,
+          0,
+          4
+        ],
+        [
+          0,
+          682,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          34,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          206,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          159
+        ]
+      ]
+    }
+  },
+  "baseline_test_metrics": {
+    "accuracy": 0.5158850226928896,
+    "macro_f1": 0.13612774451097803,
+    "weighted_f1": 0.3511313228308889,
+    "precision_macro": 0.10317700453857792,
+    "recall_macro": 0.2,
+    "per_class_f1": {
+      "visual": 0.0,
+      "textual": 0.6806387225548902,
+      "step-by-step": 0.0,
+      "example-based": 0.0,
+      "socratic": 0.0
+    },
+    "confusion_matrix": {
+      "labels": [
+        "visual",
+        "textual",
+        "step-by-step",
+        "example-based",
+        "socratic"
+      ],
+      "matrix": [
+        [
+          0,
+          230,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          682,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          44,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          207,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          159,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "feature_experiments": {
+    "baseline_single_lesson": {
+      "accuracy": 0.9863842662632375,
+      "macro_f1": 0.957530211851136,
+      "weighted_f1": 0.9861291820247673,
+      "precision_macro": 0.9652579304753217,
+      "recall_macro": 0.9511682037768994,
+      "per_class_f1": {
+        "visual": 0.9652173913043478,
+        "textual": 1.0,
+        "step-by-step": 0.8433734939759037,
+        "example-based": 0.9975786924939467,
+        "socratic": 0.9814814814814815
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            222,
+            0,
+            4,
+            0,
+            4
+          ],
+          [
+            0,
+            682,
+            0,
+            0,
+            0
+          ],
+          [
+            8,
+            0,
+            35,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            206,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            159
+          ]
+        ]
+      }
+    },
+    "with_rolling_history_2_3_lessons": {
+      "accuracy": 0.9863842662632375,
+      "macro_f1": 0.957530211851136,
+      "weighted_f1": 0.9861291820247673,
+      "precision_macro": 0.9652579304753217,
+      "recall_macro": 0.9511682037768994,
+      "per_class_f1": {
+        "visual": 0.9652173913043478,
+        "textual": 1.0,
+        "step-by-step": 0.8433734939759037,
+        "example-based": 0.9975786924939467,
+        "socratic": 0.9814814814814815
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            222,
+            0,
+            4,
+            0,
+            4
+          ],
+          [
+            0,
+            682,
+            0,
+            0,
+            0
+          ],
+          [
+            8,
+            0,
+            35,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            206,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            159
+          ]
+        ]
+      }
+    },
+    "with_skill_id_categorical": {
+      "accuracy": 0.9863842662632375,
+      "macro_f1": 0.957530211851136,
+      "weighted_f1": 0.9861291820247673,
+      "precision_macro": 0.9652579304753217,
+      "recall_macro": 0.9511682037768994,
+      "per_class_f1": {
+        "visual": 0.9652173913043478,
+        "textual": 1.0,
+        "step-by-step": 0.8433734939759037,
+        "example-based": 0.9975786924939467,
+        "socratic": 0.9814814814814815
+      },
+      "confusion_matrix": {
+        "labels": [
+          "visual",
+          "textual",
+          "step-by-step",
+          "example-based",
+          "socratic"
+        ],
+        "matrix": [
+          [
+            222,
+            0,
+            4,
+            0,
+            4
+          ],
+          [
+            0,
+            682,
+            0,
+            0,
+            0
+          ],
+          [
+            8,
+            0,
+            35,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            206,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            159
+          ]
+        ]
+      }
+    }
+  },
+  "strategies": [
+    "visual",
+    "textual",
+    "step-by-step",
+    "example-based",
+    "socratic"
+  ]
+}
